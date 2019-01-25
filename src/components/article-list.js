@@ -16,7 +16,7 @@ class ArticleList extends Component{
         )
     }
 
-    toggleOpenArticle = (articleId) => () => this.setState({articleId})
+
 
 
     get body(){
@@ -25,12 +25,14 @@ class ArticleList extends Component{
             <li key={i}>
                 <Article
                     article={article}
-                    toogleOpen={this.toggleOpenArticle(article.id)}
+                    toggleOpen={this.toggleOpenArticle}
                     isOpen={this.state.articleId === article.id}
                 />
             </li>
         )
     }
+
+    toggleOpenArticle = (articleId) => this.setState({articleId})
 
 
 }
