@@ -3,6 +3,7 @@ import ArticleList from "./components/article-list";
 import articles from './fixtures'
 import ArticlesChart from './components/articles-chart'
 import Select from 'react-select'
+import UserForm from "./components/user-form";
 
 class App extends Component {
   state = {
@@ -12,6 +13,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <UserForm />
         <Select options={this.options} value={this.state.openItem} onChange={this.handleSelect}/>
         <ArticleList articles={articles} ref={this.setArticleListRef}/>
         <ArticlesChart articles={articles}/>
